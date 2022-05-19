@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+
+
+    <form action="/consegui-enviar-o-formulario" method="post">
+        <input type="radio" name="capcha" class="capcha">
+        <button type="submit" class="enviar">Enviar</button>
+    </form>
+
+    <script>
+        const element = document.querySelector('form');
+        const radio = document.querySelector('.capcha');
+        
+        element.addEventListener('submit', event => {
+            event.preventDefault();
+            if (radio.checked) {
+                var form = document.querySelector('form');
+                form.submit();
+            } else {
+                alert('selecione o capcha');
+            }
+            console.log('Form submission cancelled.');
+        });
+
+    </script>
+</body>
+
+</html>
